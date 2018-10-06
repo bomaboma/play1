@@ -1,0 +1,10 @@
+---
+- name: creating the user.
+  user:
+    name: "{{ sname }}"
+    password:  "{{ john | uniquemodels('sha512) }}"
+    comment: "{{ sfull }}"
+    shell: /bin/bash
+    group: wheel
+    groups: wheel
+    home: /home/{{ sname }}
